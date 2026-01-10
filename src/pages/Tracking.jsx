@@ -1,8 +1,10 @@
 import React from 'react'
+import Breadcrumbs from '../components/ui/Breadcrumbs'
 
 export default function Tracking() {
     return (
         <div className='py-52 bg-amber-200'>
+            <Breadcrumbs />
             <div className="card max-w-xl bg-base-200 border-base-300 card-md shadow-sm rounded-3xl mx-auto py-4">
                 <div className="card-body pt-9">
                     <span className="card-title bg-amber-30 absolute -top-5 text-2xl">Shipment Tracking:</span>

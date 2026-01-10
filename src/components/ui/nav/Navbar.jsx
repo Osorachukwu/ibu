@@ -1,6 +1,8 @@
 import React from 'react'
-import ThemeController from './ThemeController';
+import ThemeController from '../ThemeController';
 import { ChevronDown, Menu } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import MobileNav from './MobileNav';
 
 export default function Navbar() {
     const handleItemClick = () => {
@@ -10,50 +12,26 @@ export default function Navbar() {
 
     return (
         <div className="navbar bg-base-300 md:bg-base-100 py-0">
-             {/* Mobile */}
-            <div className="dropdown dropdown-start md:hidden block">
-                <div tabIndex={0} role="button" className="btn btn-ghost m-1"><Menu /></div>
-                <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-                    <li onClick={handleItemClick}><a>Home</a></li>
-                    <li onClick={handleItemClick}><a>About</a></li>
-                            <li>
-                            <div className="dropdown dropdown-right">
-                                <div tabIndex={0} role="button" className="flex items-center gap-1 m-0 p-0">Services <ChevronDown size={18} /></div>
-                                <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm -ml-20">
-                                    <li onClick={handleItemClick} className='rounded-none'><a>Air Shipment</a></li>
-                                    <li onClick={handleItemClick}><a>Road Shipment</a></li>
-                                    <li onClick={handleItemClick}><a>Sea Shipment</a></li>
-                                    <li onClick={handleItemClick}><a>Project Import</a></li>
-                                    <li onClick={handleItemClick}><a>Customer Clearance</a></li>
-                                    <li onClick={handleItemClick}><a>Container Shipping</a></li>
-                                    <li onClick={handleItemClick}><a>Car Shipping</a></li>
-                                    <li onClick={handleItemClick}><a>Destination</a></li>
-                                    <li onClick={handleItemClick}><a>Quality & Safty</a></li>
-                                    <li onClick={handleItemClick}><a>Cargo Handling</a></li>
-
-                                </ul>
-                            </div>
-                        </li>
-                    <li onClick={handleItemClick}><a>Track</a></li>
-                    <li onClick={handleItemClick}><a>Contact</a></li>
-                </ul>
-                    
-            </div>
-            {/* Desktop */}
-            <div className="flex-1">
+             {/* Mobile menu */}
+             <MobileNav handleItemClick={handleItemClick} />
+            
+            {/* Desktop menu*/}
+            <div className="navbar-start">
                 <a className="btn btn-ghost text-xl">daisyUI</a>
             </div>
 
-            <div className="flex-none hidden md:block navbar-cente">
+            <div className="flex-none hidden md:block navbar-center">
                 <ul className="menu menu-horizontal px-1 py-0">
                     <ul className='flex items-center font-medium'>
-                        <li><a>Home</a></li>
-                        <li><a>About</a></li>
+                        <li><a className='rounded-full'>Home</a></li>
+                        <li><a className='rounded-full'>About</a></li>
+                        <li><a className='rounded-full'>Contact</a></li>
+                        
                         <li>
-                            <div className="dropdown dropdown-center">
+                            <div className="dropdown dropdown-center rounded-full">
                                 <div tabIndex={0} role="button" className="flex items-center gap-1 m-0 p-0">Services <ChevronDown size={18} /></div>
                                 <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-                                    <li onClick={handleItemClick} className='rounded-none'><a>Air Shipment</a></li>
+                                    <li onClick={handleItemClick}><a>Air Shipment</a></li>
                                     <li onClick={handleItemClick}><a>Road Shipment</a></li>
                                     <li onClick={handleItemClick}><a>Sea Shipment</a></li>
                                     <li onClick={handleItemClick}><a>Project Import</a></li>
@@ -67,12 +45,13 @@ export default function Navbar() {
                                 </ul>
                             </div>
                         </li>
-                        <li><a>Track</a></li>
-                        <li><a className='btn btn-secondary btn-sm font-medium rounded-full'>Get in touch</a></li>
+                        
+                        
+                        <li onClick={handleItemClick}><Link to="/tracking" className='btn btn-secondary btn-sm font-medium rounded-full'>Track</Link></li>
                     </ul>
                 </ul>
             </div>
-            <div className='ml-3 navbar-en'>
+            <div className='ml-3 navbar-end'>
                         <ThemeController />
             </div>
         </div>

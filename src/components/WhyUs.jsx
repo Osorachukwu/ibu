@@ -45,7 +45,7 @@ export default function WhyUs() {
                         { title: "Real time tracking", subTitle: "You can check the status of the shipment in real time using your shipment code." },
                         { title: "Pickup Delivery", subTitle: "To add to the convenience & security of your shipmeny, we provide a pick-up service that can make it easier for you" },
                         { title: "Insurance Service", subTitle: "Provides protection for your package which adds security when shipping goods" }, { title: "24 Hours", subTitle: "Generate something with ai for this" }, { title: "Packaging", subTitle: "We provide packaging services. Let us know if you need this service, we will be happy to help you" }, 6].map((item, i) => (
-                            <div key={i} className="card w-full card-sm sm:card-md lg:card-xl shadow-sm bg-base-100 border border-base-300 transition-all ease-in-out duration-100 hover:border-secondary/30 rounded-3xl">
+                            <div key={i} className="card w-full card-sm sm:card-md lg:card-xl shadow-sm bg-base-100 border border-base-300 transition-all ease-in-out duration-100 hover:shadow-2xl hover:shadow-secondary rounded-3xl">
                                 <div className="card-body">
                                     <h1 className='text-xl sm:text-4xl font-bold'>0{i + 1}</h1>
                                     <h2 className="card-title ">{item.title}</h2>
@@ -56,8 +56,6 @@ export default function WhyUs() {
 
                         ))}
                 </div>
-
-
             </div>
         </div>
     )

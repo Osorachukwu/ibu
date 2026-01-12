@@ -46,22 +46,22 @@ export default function AsideHome() {
     return (
         <div>
             <Navbar />
-            <div className='text-6xl py-10 relative h-[70vh]'>
-                <div className='bg-black/30 backdrop-blur-lg absolute h-full w-full top-0 left-0'></div>
+            <div className='text-6xl py-10 relative h-[75vh]'>
+                <div className='bg-black/60 backdrop-blur-xs absolute h-full w-full top-0 left-0'></div>
                 <img src={bgImage} alt="" className="absolute inset-0 w-full h-full object-cover -z-10" />
 
                 <div className="absolute z-50 text-white px-10">
+                    <Breadcrumbs />
                     {/* Render Title */}
                     <p className="font-bold">{current.title}</p>
 
                     {/* Render Subtitle */}
                     <p className="text-xl mt-4 opacity-90">{current.subtitle}</p>
-                    <Breadcrumbs />
                 </div>
 
             </div>
 
-            <main className="p-10">
+            <main className="">
                 <Outlet />
             </main>
         </div>

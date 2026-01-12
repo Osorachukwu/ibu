@@ -113,4 +113,5 @@ export default function AboutUs() {
 // uber sugest
 // google search console
 // zapier
-//sales funnel
+// sales funnel
+// the video (scripted or not)

@@ -7,7 +7,7 @@ export default function Breadcrumbs() {
   const pathnames = location.pathname.split('/').filter((x) => x);
 
   return (
-    <div className="text-sm breadcrumbs px-4 py-2 bg-base-200/50 mb-4 inline-block rounded-full">
+    <div className="text-sm breadcrumbs px-4 py-2  mb-4 inline-block rounded-full">
       <ul>
         <li>
           <Link to="/" className="flex items-center gap-1">

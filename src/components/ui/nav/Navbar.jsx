@@ -11,37 +11,42 @@ export default function Navbar() {
 
 
     return (
-        <div className="navbar bg-base-300 md:bg-base-100 py-0">
+        <div className="navbar bg-base-300 md:bg-base-100 py-0 px-4 sm:px-10">
              {/* Mobile menu */}
              <MobileNav handleItemClick={handleItemClick} />
             
             {/* Desktop menu*/}
             <div className="navbar-start">
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <Link to="/" className="btn btn-ghost btn-sm sm:btn-md text-xl">daisyUI</Link>
             </div>
 
             <div className="flex-none hidden md:block navbar-center">
                 <ul className="menu menu-horizontal px-1 py-0">
                     <ul className='flex items-center font-medium'>
-                        <li><a className='rounded-full'>Home</a></li>
-                        <li><a className='rounded-full'>About</a></li>
-                        <li><a className='rounded-full'>Contact</a></li>
+                        <li><Link to="/" className='rounded-full'>Home</Link></li>
+                        <li><Link to="/about" className='rounded-full'>About</Link></li>
+                        <li><Link to="/contact" className='rounded-full'>Contact</Link></li>
                         
                         <li>
-                            <div className="dropdown dropdown-center rounded-full">
+                            <div className="dropdown dropdown-center dropdown-hover rounded-full">
                                 <div tabIndex={0} role="button" className="flex items-center gap-1 m-0 p-0">Services <ChevronDown size={18} /></div>
                                 <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-                                    <li onClick={handleItemClick}><a>Air Shipment</a></li>
-                                    <li onClick={handleItemClick}><a>Road Shipment</a></li>
-                                    <li onClick={handleItemClick}><a>Sea Shipment</a></li>
-                                    <li onClick={handleItemClick}><a>Project Import</a></li>
-                                    <li onClick={handleItemClick}><a>Customer Clearance</a></li>
-                                    <li onClick={handleItemClick}><a>Container Shipping</a></li>
-                                    <li onClick={handleItemClick}><a>Car Shipping</a></li>
-                                    <li onClick={handleItemClick}><a>Destination</a></li>
-                                    <li onClick={handleItemClick}><a>Quality & Safty</a></li>
-                                    <li onClick={handleItemClick}><a>Cargo Handling</a></li>
-
+                                    {[
+                                        { title: 'Air Shipment', path: '/air-shippment'},
+                                        { title: 'Road Shipment', path: '/road-shippment'},
+                                        { title: 'Sea Shipment', path: '/sea-shippment'},
+                                        { title: 'Project Import', path: '/project-import'},
+                                        { title: 'Customer Clearance', path: '/customer-clearance'},
+                                        { title: 'Container Shipping', path: '/container-shipping'},
+                                        { title: 'Car Shipping', path: '/car-shipping'},
+                                        { title: 'Destination', path: '/destination'},
+                                        { title: 'Quality & Safty', path: '/quality-safty'},
+                                        { title: 'Cargo Handling', path: '/cargo-handling'},
+                                    ].map((service, index) => (
+                                        <li key={index} onClick={handleItemClick}>
+                                            <Link to={service.path} className='hover:rounded-full'>{service.title}</Link>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
                         </li>

@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom'
 export default function MobileNav({ handleItemClick }) {
     return (
         <div className="dropdown dropdown-start md:hidden block">
-            <div tabIndex={0} role="button" className="btn btn-ghost m-1"><Menu /></div>
+            <div tabIndex={0} role="button" className="btn btn-ghost shadow-md btn-square btn-sm sm:btn-md m-1"><Menu /></div>
             <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-                <li onClick={handleItemClick}><a>Home</a></li>
-                <li onClick={handleItemClick}><a>About</a></li>
+                <li onClick={handleItemClick}><Link to="/">Home</Link></li>
+                <li onClick={handleItemClick}><Link to="/about">About</Link></li>
                 <li onClick={handleItemClick}><Link to="/tracking">Track</Link></li>
                 <li>
                     <div className="dropdown dropdown-right">

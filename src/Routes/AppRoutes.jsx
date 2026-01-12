@@ -6,6 +6,7 @@ import Footer from '../components/Footer'
 import NotFound from '../pages/NotFound'
 import AsideHome from '../pages/AsideHome'
 import About from '../pages/About'
+import Contact from '../pages/Contact'
 // import HeadroomNav from '../components/ui/nav/HeadromNav'
 
 export default function AppRoutes() {
@@ -18,6 +19,7 @@ export default function AppRoutes() {
                 <Route element={<AsideHome />}>
                     <Route path="/tracking" element={<Tracking />} />
                     <Route path="/about" element={<About />} />
+                    <Route path="/contact" element={<Contact />} />
                 </Route>
                 {/* <Route path="/contact" element={<Contact />} /> */}
                 {/* <Route path="/services" element={<Services />} /> */}

@@ -13,7 +13,7 @@ export default function MobileNav({ handleItemClick }) {
                 <li>
                     <div className="dropdown dropdown-right">
                         <div tabIndex={0} role="button" className="flex items-center gap-1 m-0 p-0">Services <ChevronDown size={18} /></div>
-                        <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm -ml-20">
+                        <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box w-52 p-2 shadow-sm -ml-20 ">
                             <li onClick={handleItemClick} className='rounded-none'><a>Air Shipment</a></li>
                             <li onClick={handleItemClick}><a>Road Shipment</a></li>
                             <li onClick={handleItemClick}><a>Sea Shipment</a></li>
